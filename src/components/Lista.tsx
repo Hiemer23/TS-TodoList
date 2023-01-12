@@ -9,7 +9,7 @@ import style from '../styles/Lista.module.css'
 
 function Lista() {
 
-    const [list, setList] = useState<Item[]>(JSON.parse(localStorage.getItem("Lista") || '{}'))
+    const [list, setList] = useState<Item[]>(JSON.parse(localStorage.getItem("Lista") || '[]'))
 
     const changeList = (newList: Item[]) => {
         setList(newList)

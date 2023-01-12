@@ -21,7 +21,7 @@ function Add_Task({ handle_Add_Task }: Props) {
 
   return (
     <form className={style.input_container} onSubmit={e => handleInput(e)}>
-      <button><BsPlusSquare /></button>
+      <button type='submit'><BsPlusSquare /></button>
       <input className={style.input}
         type="text"
         placeholder='Adicione uma Tarefa'

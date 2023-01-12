@@ -1,0 +1,31 @@
+.container_edit {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.interno {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 20px;
+    width: 50%;
+    background-color: #fff;
+    z-index: 1;
+    color: #000
+}
+
+.buttonClose {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}

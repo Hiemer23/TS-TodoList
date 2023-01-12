@@ -12,10 +12,12 @@ type Props = {
 }
 
 import style from '../styles/Lista.module.css'
+import Edicao from './Edicao'
 
 function ItemLista({ item, handle_done_task, remove_task, edit_task }: Props) {
 
     const [isChecked, setIsChecked] = useState(item.done)
+    const [edit, setEdit] = useState(false)
 
     const handleCheck = (e: any) => {
         setIsChecked(e.target.checked)
@@ -29,12 +31,19 @@ function ItemLista({ item, handle_done_task, remove_task, edit_task }: Props) {
     }
 
     const handleEdit = (e: any) => {
-        let new_name = ''
-        edit_task(item.id, new_name)
+        setEdit(true)
+        // let new_name = ''
+
+        // edit_task(item.id, new_name)
+    }
+
+    const closeWindow = () => {
+        setEdit(false)
     }
 
     return (
         <div className={isChecked ? style.card_done : style.card} key={item.id}>
+            {edit && <Edicao item={item} closeWindow={closeWindow} edit_task={edit_task} />}
             <input className={style.check}
                 type='checkbox'
                 checked={isChecked}

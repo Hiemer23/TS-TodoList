@@ -31,8 +31,16 @@ function Edicao({ item, closeWindow, edit_task }: Props) {
         closeWindow()
     }
 
+    const tratarClick = (e: any) => {
+        e.preventDefault()
+        //console.log(e.target.classList[0])
+        if (e.target.classList[0] === (style.container_edit)) {
+            closeWindow()
+        }
+    }
+
     return (
-        <div className={style.container_edit}>
+        <div className={style.container_edit} onClick={e => tratarClick(e)}>
 
             <form className={style.interno} onSubmit={e => handleUpdate(e)}>
                 <p className={style.titulo}>Editar Tarefa</p>

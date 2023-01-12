@@ -19,6 +19,7 @@
     flex-direction: row;
     overflow: hidden;
     justify-content: flex-start;
+    align-items: center;
     padding: .35em 0;
     transition: .4s;
     margin: .5em 0;
@@ -29,9 +30,10 @@
     text-decoration: line-through;
 }
 
-input[type='checkbox'] {
+.check {
     margin: 0 1em;
-    width: 1.5em;
+    min-width: 20px;
+    min-height: 20px;
 }
 
 .name {
@@ -48,6 +50,24 @@ input[type='checkbox'] {
     align-items: center;
 }
 
-.delete {
-    
+.delete,.edit{
+    padding: 0 12px;
+    height: 18px;
+    margin-left: .5em;
+    margin-right: .5em;
+    cursor: pointer;
+    transition: .4s;
+    background: transparent;
+    color: #fff;
+    border: none;
+}
+.edit{
+    margin-left: auto;
+}
+
+.delete:hover {
+    color: rgb(150, 23, 23)
+}
+.edit:hover{
+    color: rgb(23, 150, 146)
 }

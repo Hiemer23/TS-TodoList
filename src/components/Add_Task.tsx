@@ -27,6 +27,7 @@ function Add_Task({ handle_Add_Task }: Props) {
         placeholder='Adicione uma Tarefa'
         value={inputText}
         onChange={e => setInputText(e.target.value)}
+        required
       />
     </form>
   )

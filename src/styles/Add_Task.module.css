@@ -1,0 +1,29 @@
+.input_container{
+    border: 1px solid #555;
+    border-radius: 15px;
+    display: flex;
+    width: 100%;
+    margin: .8em 0;
+}
+.input_container button{
+    display: flex;
+    font-size: 1.5em;
+    padding: 1em;
+    color: #fff;
+    background-color: #555;
+    border: none;
+    border-radius: 15px;
+    transition: .4s;
+    cursor: pointer;
+}
+.input_container button:hover{
+    background-color: rgb(173, 172, 172);
+}
+.input{
+    border: 0px;
+    background: transparent;
+    color: #fff;
+    font-size: 25px;
+    width: 100%;
+    margin-left: 10px;
+}

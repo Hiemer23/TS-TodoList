@@ -4,6 +4,8 @@ import { useState } from 'react'
 
 import style from '../styles/Edicao.module.css'
 
+import { AiOutlineClose, AiOutlineCheck } from 'react-icons/ai'
+
 type Props = {
     item: Item,
     closeWindow: () => void,
@@ -31,18 +33,19 @@ function Edicao({ item, closeWindow, edit_task }: Props) {
 
     return (
         <div className={style.container_edit}>
-            <div className={style.interno}>
-                {/* <h1>Editar Tarefa</h1> */}
-                <form onSubmit={e => handleUpdate(e)}>
-                    <input type="text"
-                        value={inputText}
-                        onChange={e => setInputText(e.target.value)}
-                        required>
-                    </input>
-                    <button type="button" className={style.buttonClose} onClick={handleClose}>CLOSE</button>
-                    <button type="button" className={style.buttonClose} onClick={e => handleUpdate(e)}>ATUALIZAR</button>
-                </form>
-            </div>
+
+            <form className={style.interno} onSubmit={e => handleUpdate(e)}>
+                <p className={style.titulo}>Editar Tarefa</p>
+                <input className={style.textBox} type="text"
+                    value={inputText}
+                    onChange={e => setInputText(e.target.value)}
+                    required>
+                </input>
+                <div className={style.buttonContainer}>
+                    <button type="button" className={style.buttonClose} onClick={handleClose}><AiOutlineClose /></button>
+                    <button type="button" className={style.buttonUpdate} onClick={e => handleUpdate(e)}><AiOutlineCheck /></button>
+                </div>
+            </form>
 
         </div >
     )

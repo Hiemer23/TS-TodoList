@@ -9,7 +9,7 @@ import { AiOutlineClose, AiOutlineCheck } from 'react-icons/ai'
 type Props = {
     item: Item,
     closeWindow: () => void,
-    edit_task: (id_task: number, new_task: string) => void
+    edit_task: (id_task: string, new_task: string) => void
 }
 
 

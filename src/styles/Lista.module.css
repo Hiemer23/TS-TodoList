@@ -24,6 +24,7 @@
     transition: .4s;
     margin: .5em 0;
     border-radius: 15px;
+    cursor: move;
 }
 
 .card_done {
@@ -51,7 +52,8 @@
     align-items: center;
 }
 
-.delete,.edit{
+.delete,
+.edit {
     padding: 0 12px;
     height: 18px;
     margin-left: .5em;
@@ -62,13 +64,15 @@
     color: #fff;
     border: none;
 }
-.edit{
+
+.edit {
     margin-left: auto;
 }
 
 .delete:hover {
     color: rgb(150, 23, 23)
 }
-.edit:hover{
+
+.edit:hover {
     color: rgb(23, 150, 146)
 }

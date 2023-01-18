@@ -11,8 +11,8 @@
     border-top: 1px solid #fff;
 }
 
-.card,
-.card_done {
+#card,
+#card_done {
     display: flex;
     background-color: #2f2f34;
     width: 100%;
@@ -27,8 +27,19 @@
     cursor: move;
 }
 
-.card_done {
+#card_done {
     text-decoration: line-through;
+    background-color: #2b3c2e;
+}
+
+.drag {
+    box-sizing: border-box;
+    opacity: 0.2;
+    border: solid 1px #fff;
+}
+
+.over {
+    background-color: #0d7520;
 }
 
 .check {

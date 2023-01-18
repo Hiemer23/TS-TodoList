@@ -21,6 +21,7 @@ function ItemLista({ item, pos, target, handle_done_task, remove_task, edit_task
 
     const [isChecked, setIsChecked] = useState(item.done)
     const [edit, setEdit] = useState(false)
+    const [drag, setDrag] = useState(false)
 
     const handleCheck = (e: any) => {
         setIsChecked(e.target.checked)
@@ -40,24 +41,29 @@ function ItemLista({ item, pos, target, handle_done_task, remove_task, edit_task
     const closeWindow = () => {
         setEdit(false)
     }
-    const onDragStart = (id_task: string) => {
+    const onDragStart = (id_task: string, e: any) => {
         onDragTask(id_task, pos)
+        setDrag(true)
     }
     const onDragOver = (e: any) => {
         e.preventDefault()
         target(pos)
     }
 
-    const onDragEnd = (id_task: string) => {
-        //console.log('dropou')
+    const onDragEnd = (e: any) => {
+        e.preventDefault()
+        console.log('dropou')
+        setDrag(false)
     }
 
     return (
-        <div className={isChecked ? style.card_done : style.card} key={item.id}
+        <div id={isChecked ? style.card_done : style.card}
+            className={drag ? style.drag : "normal"}
+            key={item.id}
             draggable
-            onDragStart={() => onDragStart(item.id)}
+            onDragStart={(e) => onDragStart(item.id, e)}
             onDragOver={(e) => onDragOver(e)}
-            onDragEnd={() => onDragEnd(item.id)}>
+            onDragEnd={(e) => onDragEnd(e)}>
 
             {edit && <Edicao item={item} closeWindow={closeWindow} edit_task={edit_task} />}
             <input className={style.check}
@@ -68,7 +74,7 @@ function ItemLista({ item, pos, target, handle_done_task, remove_task, edit_task
             <p className={style.name}>{item.name}</p>
             <button className={style.edit} onClick={e => handleEdit(e)}><BsFillPenFill /></button>
             <button className={style.delete} onClick={e => handleDelete(e)}><BsFillTrashFill /></button>
-        </div>
+        </div >
     )
 }
 

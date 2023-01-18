@@ -26,7 +26,6 @@ function ItemLista({ item, pos, target, handle_done_task, remove_task, edit_task
     const handleCheck = (e: any) => {
         setIsChecked(e.target.checked)
         handle_done_task(item.id)
-        //console.log("clicou")
     }
 
     const handleDelete = (e: any) => {
@@ -52,7 +51,6 @@ function ItemLista({ item, pos, target, handle_done_task, remove_task, edit_task
 
     const onDragEnd = (e: any) => {
         e.preventDefault()
-        console.log('dropou')
         setDrag(false)
     }
 

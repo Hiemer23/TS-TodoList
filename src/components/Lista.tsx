@@ -37,7 +37,6 @@ function Lista() {
             }
         })
         changeList(newList)
-        //console.log(newList)
     }
 
     const remove_task = (id_task: string) => {
@@ -59,11 +58,9 @@ function Lista() {
 
         newList = newList.map(list_item => {
             if (list_item.id !== id_task) {
-                //console.log("teste")
                 return list_item
             }
             else {
-                //console.log("teste")
                 return {
 
                     id: list_item.id,
@@ -80,10 +77,8 @@ function Lista() {
     }
     const onDragOver = (e: any) => {
         e.preventDefault();
-        //console.log(pos)
     }
     const onDrop = (e: any) => {
-        //console.log(e.dataTransfer.items)
         e.preventDefault();
         sort_task(list[targetPos])
     }

@@ -33,7 +33,6 @@ function Edicao({ item, closeWindow, edit_task }: Props) {
 
     const tratarClick = (e: any) => {
         e.preventDefault()
-        //console.log(e.target.classList[0])
         if (e.target.classList[0] === (style.container_edit)) {
             closeWindow()
         }

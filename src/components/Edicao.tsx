@@ -43,7 +43,7 @@ function Edicao({ item, closeWindow, edit_task }: Props) {
 
             <form className={style.interno} onSubmit={e => handleUpdate(e)}>
                 <p className={style.titulo}>Editar Tarefa</p>
-                <input className={style.textBox} type="text"
+                <input autoFocus className={style.textBox} type="text"
                     value={inputText}
                     onChange={e => setInputText(e.target.value)}
                     required>
